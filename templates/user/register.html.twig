@@ -2,6 +2,25 @@
 
 {% block title %}Hello UserController!{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/form.css') }}">
+{% endblock %}
+
 {% block body %}
 <h1>Inscription</h1>
+
+    {{ form_start(form)}}
+    {# Appel du formulaire #}
+
+    {{ form_row(form.username) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.plainPassword) }}
+
+    <div class="form-end">
+    <button class="button">Confirmer</button>
+    </div>
+    {{ form_end(form)}}
+    {# Fin du formulaire #}
+
 {% endblock %}
+
